@@ -18,8 +18,6 @@ logger = logging.getLogger(__name__)
 
 
 # Create an `about` view to render a static about page
-# def about(request):
-# ...
 def about(request):
     context = {}
     if request.method == "GET":
@@ -27,15 +25,12 @@ def about(request):
 
 
 # Create a `contact` view to return a static contact page
-#def contact(request):
 def contact(request):
     context = {}
     if request.method == "GET":
         return render(request, "djangoapp/contact.html", context)
 
 # Create a `login_request` view to handle sign in request
-# def login_request(request):
-# ...
 def login_request(request):
     context = {}
     # handle post request
@@ -55,9 +50,8 @@ def login_request(request):
     else:
         return redirect("djangoapp/index.html")
 
+
 # Create a `logout_request` view to handle sign out request
-# def logout_request(request):
-# ...
 def logout_request(request):
     # Get the user object based on session id in request
     print("Log out the user `{}`".format(request.user.username))
@@ -66,9 +60,8 @@ def logout_request(request):
     # Redirect user back to course list view
     return redirect('djangoapp:index')
 
+
 # Create a `registration_request` view to handle sign up request
-# def registration_request(request):
-# ...
 def registration_request(request):
     context = {}
     # If it is a GET request, just render the registration page
@@ -114,4 +107,3 @@ def get_dealerships(request):
 # Create a `add_review` view to submit a review
 # def add_review(request, dealer_id):
 # ...
-
